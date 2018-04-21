@@ -1,0 +1,10 @@
+.login-form-component form {
+    margin: 1em auto 1em auto;
+    width: 300px;
+    border: 1px solid black;
+    padding: 1em;
+}
+
+.login-form-component form div {
+    margin-bottom: 0.5em;
+}

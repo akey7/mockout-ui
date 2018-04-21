@@ -3,7 +3,7 @@ This is a build and burn react app, with new emphasis on something that does not
 
 Also, it is just a checklist of files.
 
-## Files to touch after create-react-app
+## Directories to create
 
 + Create directory: `src/components`
 
@@ -12,3 +12,17 @@ Also, it is just a checklist of files.
 + Create directory: `src/reducers`
 
 + Create directory: `src/containers`
+
+## Create the login form
+
+The react component is at
+
+```
+src/components/login-form-component.js
+```
+
+and its CSS is at:
+
+```
+src/components/login-form-component.css
+```
