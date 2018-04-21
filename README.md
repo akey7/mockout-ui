@@ -75,3 +75,5 @@ with its accompanying CSS in
 ```
 src/containers/header-container.css
 ```
+
+This is a functional container. Crucially, because it is a container, the function itself is not on `export default`. Rather that whole pile of react redux crap is exported.
