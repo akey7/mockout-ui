@@ -53,3 +53,17 @@ The root reducer will combine all the reducers for the store.
 ```
 src/reducers/index.js
 ```
+
+## 50. Create the authentication header
+
+The header of the app will have the title of the app on the left side and the login/out buttons on the right side. It needs to be a container so it can be aware of auth changes.
+
+```
+src/containers/header-container.js
+```
+
+with its accompanying CSS in
+
+```
+src/containers/header-container.css
+```
