@@ -3,7 +3,7 @@ import { loginSubmit } from '../actions/index'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import './login-form-component.css'
+import './login-form-container.css'
 
 class LoginForm extends Component {
   constructor(props) {

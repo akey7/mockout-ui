@@ -18,7 +18,7 @@ Also, it is just a checklist of files.
 The react component is at
 
 ```
-src/components/login-form-component.js
+src/components/login-form-container.js
 ```
 
 and its CSS is at:
