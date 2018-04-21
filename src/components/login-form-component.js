@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { loginSubmit } from '../actions/index'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
 import './login-form-component.css'
 
 class LoginForm extends Component {
@@ -23,6 +27,7 @@ class LoginForm extends Component {
   onSubmit = (event) => {
     event.preventDefault()
     console.log(this.state)
+    this.props.loginSubmit({ username: this.state.username, password: this.state.password })
   }
 
   render() {
@@ -44,4 +49,6 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit: loginSubmit }, dispatch)
+
+export default connect(() => ({}), mapDispatchToProps)(LoginForm)
