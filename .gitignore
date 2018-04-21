@@ -57,3 +57,12 @@ typings/
 # dotenv environment variables file
 .env
 
+# IntelliJ junk
+.idea/
+
+# macOS junk
+.DS_Store
+
+# lock files which cause issues with Heroku
+yarn.lock
+package-lock.json
