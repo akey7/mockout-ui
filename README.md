@@ -13,6 +13,13 @@ Also, it is just a checklist of files.
 
 + Create directory: `src/containers`
 
+## 15. Move `app.js` and `App.css`
+
+Move `src/app.js` -> `src/components/app.js`
+Move `src/app.js` -> `src/components/app.js`
+
+Modify `src/index.js` to match the new locations and names of the files. If you are using an IDE like WebStorm it can handle this refactoring automatically.
+
 ## 20. Create the login form
 
 The react component is at
