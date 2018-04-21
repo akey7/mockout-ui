@@ -26,7 +26,6 @@ class LoginForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state)
     this.props.loginSubmit({ username: this.state.username, password: this.state.password })
   }
 
@@ -36,11 +35,17 @@ class LoginForm extends Component {
         <form onSubmit={this.onSubmit}>
           <div>
             <label>Username:</label>
-            <input onChange={this.onUsernameChange} />
+            <input
+              placeholder='Username'
+              onChange={this.onUsernameChange}
+              val={this.state.username} />
           </div>
           <div>
             <label>Password:</label>
-            <input onChange={this.onPasswordChange} />
+            <input
+              placeholder='Password'
+              onChange={this.onPasswordChange}
+              val={this.state.password} />
           </div>
           <input type="submit"/>
         </form>
