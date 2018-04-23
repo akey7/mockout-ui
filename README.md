@@ -61,12 +61,34 @@ The root reducer will combine all the reducers for the store.
 src/reducers/index.js
 ```
 
-## 45. Put the `rootReducer` into a `<Provider>`
+## 45. Put the `rootReducer` and `thunk` into a `<Provider>`
 
 This magic happens in
 
 ```
 src/index.js
+```
+
+Where you should find something like this:
+
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './components/app'
+import registerServiceWorker from './registerServiceWorker'
+
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import reducers from './reducers'
+import thunk from 'redux-thunk'
+
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}><App /></Provider>,
+  document.getElementById('root'))
+registerServiceWorker()
 ```
 
 ## 50. Create the authentication header
