@@ -17,7 +17,8 @@ export function loginSubmit({ email, password }) {
       .then((result) => result.json())
       .then((result) => {
         console.log(result)
-        dispatch({ type: 'LOGIN_SUBMIT', payload: dispatch })
+        const payload = { email: email, token: result.token }
+        dispatch({ type: 'LOGIN_SUBMIT', payload })
       })
   }
 }
