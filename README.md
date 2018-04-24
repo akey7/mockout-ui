@@ -91,7 +91,7 @@ ReactDOM.render(
 registerServiceWorker()
 ```
 
-## 50. Create the authentication header
+## 50. Create the authentication UI header
 
 The header of the app will have the title of the app on the left side and the login/out buttons on the right side. It needs to be a container so it can be aware of auth changes.
 
@@ -105,4 +105,8 @@ with its accompanying CSS in
 src/containers/header-container.css
 ```
 
-This is a functional container. Crucially, because it is a container, the function itself is not on `export default`. Rather that whole pile of react redux crap is exported.
+This is a functional container. Crucially, because it is a container, the function itself is not on `export default`. Rather that whole pile of react redux stuff is exported.
+
+## 60. Create `.env.development` and  `.env.production`
+
+Check the source code.
