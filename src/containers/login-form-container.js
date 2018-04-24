@@ -9,14 +9,14 @@ class LoginForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: '',
+      email: '',
       token: ''
     }
   }
 
-  onUsernameChange = (event) => {
+  onEmailChange = (event) => {
     event.preventDefault()
-    this.setState({ ...this.state, username: event.target.value })
+    this.setState({ ...this.state, email: event.target.value })
   }
 
   onPasswordChange = (event) => {
@@ -26,7 +26,7 @@ class LoginForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    this.props.loginSubmit({ username: this.state.username, password: this.state.password })
+    this.props.loginSubmit({ email: this.state.email, password: this.state.password })
   }
 
   render() {
@@ -34,11 +34,11 @@ class LoginForm extends Component {
       <div className='login-form-component'>
         <form onSubmit={this.onSubmit}>
           <div>
-            <label>Username:</label>
+            <label>Email:</label>
             <input
-              placeholder='Username'
-              onChange={this.onUsernameChange}
-              val={this.state.username} />
+              placeholder='email'
+              onChange={this.onEmailChange}
+              val={this.state.email} />
           </div>
           <div>
             <label>Password:</label>
