@@ -110,3 +110,13 @@ This is a functional container. Crucially, because it is a container, the functi
 ## 60. Create `.env.development` and  `.env.production`
 
 Check the source code.
+
+## 70. Heroku!
+
+```
+heroku login
+heroku create -b https://github.com/mars/create-react-app-buildpack.git
+heroku apps:rename mockout-ui
+git ph heroku master
+heroku open
+```
