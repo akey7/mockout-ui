@@ -120,3 +120,7 @@ heroku apps:rename mockout-ui
 git ph heroku master
 heroku open
 ```
+
+## 80. Authentication route protections
+
+[https://medium.com/the-many/adding-login-and-authentication-sections-to-your-react-or-react-native-app-7767fd251bd1](https://medium.com/the-many/adding-login-and-authentication-sections-to-your-react-or-react-native-app-7767fd251bd1)
