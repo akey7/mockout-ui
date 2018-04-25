@@ -9,9 +9,8 @@ import reducers from './reducers'
 import thunk from 'redux-thunk'
 
 import TodosIndex from './components/todos-index-component'
-import LoginIndex from './components/login-index-component'
+import LoginContainer from './containers/login-form-container'
 import Header from './containers/header-container'
-import App from './components/app'
 import './index.css'
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
@@ -23,7 +22,7 @@ ReactDOM.render(
         <Header/>
         <main>
           <Switch>
-            <Route path='/login' component={ LoginIndex } />
+            <Route path='/login' component={ LoginContainer } />
             <Route path='/' component={ TodosIndex } />
           </Switch>
         </main>
