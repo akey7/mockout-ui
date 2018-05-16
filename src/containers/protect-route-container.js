@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import LoginFormContainer from './login-form-container'
 
 // <Route {...rest} render={(props) => <Component {...props} />} />
 
@@ -10,10 +11,13 @@ import { connect } from 'react-redux'
 
 class ProtectRoute extends Component {
   render() {
-    console.log(`>>> ${Object.keys(this.props)}`)
-    return (
-      <Redirect to='/login' />
-    )
+    console.log(`>>> ProtectRoute ${this.props.isLoggedIn}`)
+    if (this.props.isLoggedIn) {
+      return <p>YOU ARE LOGGED IN</p>
+    }
+    else {
+      return <LoginFormContainer />
+    }
   }
 }
 
