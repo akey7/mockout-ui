@@ -6,4 +6,6 @@ import { connect } from 'react-redux'
 
 const ProtectRoute = ({ component: Component, ...rest }) => <Redirect to='/login' />
 
-export default ProtectRoute
+const mapStateToProps = (state) => state.auth
+
+export default connect(mapStateToProps)(ProtectRoute)
