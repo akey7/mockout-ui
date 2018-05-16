@@ -1,12 +1,12 @@
 function AuthReducer(state = null, action) {
   if (state) {
     switch (action.type) {
-    case 'LOGIN_SUBMIT': return {...state, username: action.payload.username}
+    case 'LOGIN_SUBMIT': return { ...state, username: action.payload.username, isLoggedIn: true }
     default: return state
     }
   }
   else {
-    return ({ username: null, token: null })
+    return ({ username: null, token: null, isLoggedIn: false })
   }
 }
 

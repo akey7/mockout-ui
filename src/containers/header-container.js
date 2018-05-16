@@ -16,7 +16,6 @@ class Header extends Component {
   // }
 
   render() {
-    console.log(`username: ${this.props.token} ${Object.keys(this.props)}`)
     return(
       <div className='header-container'>
         <a className='title' href='#title'>Mockout</a>
