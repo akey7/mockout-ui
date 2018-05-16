@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import LoginFormContainer from './login-form-container'
 
@@ -13,7 +13,9 @@ class ProtectRoute extends Component {
   render() {
     console.log(`>>> ProtectRoute ${this.props.isLoggedIn}`)
     if (this.props.isLoggedIn) {
-      return <p>YOU ARE LOGGED IN</p>
+      // return <p>YOU ARE LOGGED IN</p>
+      const InnerComponent = this.props.component
+      return <Route render={(props) => <InnerComponent {...props} />} />
     }
     else {
       return <LoginFormContainer />
