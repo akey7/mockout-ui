@@ -48,6 +48,7 @@ class LoginForm extends Component {
               val={this.state.password} />
           </div>
           <input type="submit"/>
+          <p>{ this.props.error }</p>
         </form>
       </div>
     )
