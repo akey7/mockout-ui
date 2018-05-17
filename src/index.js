@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import reducers from './reducers'
+import reducers from './reducers/root-reducer'
 import thunk from 'redux-thunk'
 
 import TodosIndex from './components/todos-index-component'
