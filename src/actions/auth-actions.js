@@ -28,9 +28,7 @@ const loginSubmit = ({ username, password }) => {
   }
 }
 
-const logout = () => {
-  console.log(`>>> LOGOUT!!!`)
-}
+const logout = () => (dispatch) => dispatch({ type: 'LOGOUT', payload: {} })
 
 export { loginSubmit, logout }
 
