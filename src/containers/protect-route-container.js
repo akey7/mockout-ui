@@ -13,7 +13,7 @@ class ProtectRoute extends Component {
     if (this.props.isLoggedIn) {
       // return <p>YOU ARE LOGGED IN</p>
       const InnerComponent = this.props.component
-      return <Route render={(props) => <InnerComponent {...props} />} />
+      return <Route render={ (props) => <InnerComponent {...props} /> } />
     }
     else {
       return <LoginFormContainer />
