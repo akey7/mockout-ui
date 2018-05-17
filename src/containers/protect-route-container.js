@@ -3,8 +3,6 @@ import { Redirect, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import LoginFormContainer from './login-form-container'
 
-// <Route {...rest} render={(props) => <Component {...props} />} />
-
 // const ProtectRoute = ({ component: Component, ...rest }) => (
 //   <Redirect to='/login' />
 // )
