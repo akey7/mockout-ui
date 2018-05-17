@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { loginSubmit } from '../actions/index'
+import { loginSubmit } from '../actions/auth-actions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 

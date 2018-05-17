@@ -18,7 +18,7 @@ Also, it is just a checklist of files.
 Move `src/app.js` -> `src/components/app.js`
 Move `src/app.js` -> `src/components/app.js`
 
-Modify `src/index.js` to match the new locations and names of the files. If you are using an IDE like WebStorm it can handle this refactoring automatically.
+Modify `src/auth-actions.js` to match the new locations and names of the files. If you are using an IDE like WebStorm it can handle this refactoring automatically.
 
 ## 20. Create the login form
 
@@ -58,7 +58,7 @@ The shape of the auth data will be:
 The root reducer will combine all the reducers for the store.
 
 ```
-src/reducers/index.js
+src/reducers/auth-actions.js
 ```
 
 ## 45. Put the `rootReducer` and `thunk` into a `<Provider>`
@@ -66,7 +66,7 @@ src/reducers/index.js
 This magic happens in
 
 ```
-src/index.js
+src/auth-actions.js
 ```
 
 Where you should find something like this:
