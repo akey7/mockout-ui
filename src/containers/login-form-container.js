@@ -56,6 +56,6 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = (state) => state.auth
-const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit: loginSubmit }, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
