@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-export function loginSubmit({ username, password }) {
+const loginSubmit = ({ username, password }) => {
   const url = `${process.env.REACT_APP_API_URL}/login`
 
   const opts = {
@@ -16,9 +16,7 @@ export function loginSubmit({ username, password }) {
     fetch(url, opts)
       .then((result) => result.json())
       .then((result) => {
-        debugger
         const { token, error } = result
-
         if (error) {
           dispatch({ type: 'LOGIN_FAIL', payload: { error } })
         }
@@ -29,5 +27,11 @@ export function loginSubmit({ username, password }) {
       })
   }
 }
+
+const logout = () => {
+  console.log(`>>> LOGOUT!!!`)
+}
+
+export { loginSubmit, logout }
 
 /* eslint-enable no-unused-vars */
