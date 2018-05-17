@@ -23,7 +23,6 @@ ReactDOM.render(
         <Header/>
         <main>
           <Switch>
-            <Route path='/login' component={ LoginContainer } />
             <ProtectRoute path='/' component={ TodosIndex } />
           </Switch>
         </main>
