@@ -1,12 +1,27 @@
 function AuthReducer(state = null, action) {
+  const initialNotLoggedInState = { username: null, token: null, error: null, isLoggedIn: false }
   if (state) {
     switch (action.type) {
-    case 'LOGIN_SUBMIT': return { ...state, username: action.payload.username, isLoggedIn: true }
-    default: return state
+    case 'LOGIN_PASS':
+      return {
+        ...state,
+        username: action.payload.username,
+        isLoggedIn: true,
+        error: null,
+        token: action.payload.token
+      }
+    case 'LOGIN_FAIL':
+      return {
+        ...state,
+        isLoggedIn: false,
+        error: action.payload.error
+      }
+    default:
+      return state
     }
   }
   else {
-    return ({ username: null, token: null, isLoggedIn: false })
+    return { ...initialNotLoggedInState }
   }
 }
 

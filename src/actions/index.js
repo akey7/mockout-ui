@@ -16,9 +16,16 @@ export function loginSubmit({ username, password }) {
     fetch(url, opts)
       .then((result) => result.json())
       .then((result) => {
-        console.log(result)
-        const payload = { username: username, token: result.token }
-        dispatch({ type: 'LOGIN_SUBMIT', payload })
+        debugger
+        const { token, error } = result
+
+        if (error) {
+          dispatch({ type: 'LOGIN_FAIL', payload: { error } })
+        }
+        else {
+          const payload = { username: username, token: result.token }
+          dispatch({ type: 'LOGIN_PASS', payload })
+        }
       })
   }
 }
