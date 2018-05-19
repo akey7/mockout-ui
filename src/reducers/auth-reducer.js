@@ -2,8 +2,7 @@ function AuthReducer(state = null, action) {
   const initialNotLoggedInState = {
     username: null,
     token: null,
-    error: null,
-    isLoggedIn: false
+    error: null
   }
 
   if (state) {
@@ -12,14 +11,12 @@ function AuthReducer(state = null, action) {
       return {
         ...state,
         username: action.payload.username,
-        isLoggedIn: true,
         error: null,
         token: action.payload.token
       }
     case 'LOGIN_FAIL':
       return {
         ...state,
-        isLoggedIn: false,
         error: action.payload.error
       }
     case 'LOGOUT':
