@@ -1,5 +1,11 @@
 function AuthReducer(state = null, action) {
-  const initialNotLoggedInState = { username: null, token: null, error: null, isLoggedIn: false }
+  const initialNotLoggedInState = {
+    username: null,
+    token: null,
+    error: null,
+    isLoggedIn: false
+  }
+
   if (state) {
     switch (action.type) {
     case 'LOGIN_PASS':
