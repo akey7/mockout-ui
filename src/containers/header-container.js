@@ -14,8 +14,7 @@ class Header extends Component {
     return(
       <div className='header-container'>
         <a className='title' href='#title'>Mockout</a>
-        <a className='signin' href='#signin'>{ this.props.username || 'Sign In' }</a>
-        <a href='#' onClick={ this.onLogoutClick }>{ this.props.username !== null ? 'Logout' : '' }</a>
+        <a href='#logout' onClick={ this.onLogoutClick }>{ this.props.username !== null ? 'Logout' : '' }</a>
       </div>
     )
   }
