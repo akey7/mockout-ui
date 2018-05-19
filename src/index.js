@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import registerServiceWorker from './registerServiceWorker'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Switch } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
@@ -9,7 +9,6 @@ import reducers from './reducers/root-reducer'
 import thunk from 'redux-thunk'
 
 import TodosIndex from './components/todos-index-component'
-import LoginContainer from './containers/login-form-container'
 import Header from './containers/header-container'
 import ProtectRoute from './containers/protect-route-container'
 import './index.css'
