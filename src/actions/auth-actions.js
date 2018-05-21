@@ -29,10 +29,6 @@ const loginSubmit = ({ username, password }) => {
         return token
       })
       .then((token) => {
-        listTodos({ token })
-        return token
-      })
-      .then((token) => {
         const payload = { username, token }
         dispatch({ type: LOGIN_PASS, payload })
       })

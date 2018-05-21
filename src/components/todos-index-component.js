@@ -17,4 +17,6 @@ class TodosIndexComponent extends Component {
 }
 
 const mapStateToProps = (state) => state.todos
-export default connect(mapStateToProps)(TodosIndexComponent)
+const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodosIndexComponent)
