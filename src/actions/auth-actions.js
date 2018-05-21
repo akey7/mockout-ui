@@ -1,5 +1,9 @@
 /* eslint-disable no-unused-vars */
 
+const LOGIN_FAIL = 'LOGIN_FAIL'
+const LOGOUT = 'LOGOUT'
+const LOGIN_PASS = 'LOGIN_PASS'
+
 const loginSubmit = ({ username, password }) => {
   const url = `${process.env.REACT_APP_API_URL}/login`
 
@@ -18,18 +22,24 @@ const loginSubmit = ({ username, password }) => {
       .then((result) => {
         const { token, error } = result
         if (error) {
-          dispatch({ type: 'LOGIN_FAIL', payload: { error } })
+          dispatch({ type: LOGIN_FAIL, payload: { error } })
         }
         else {
           const payload = { username: username, token: result.token }
-          dispatch({ type: 'LOGIN_PASS', payload })
+          dispatch({ type: LOGIN_PASS, payload })
         }
       })
   }
 }
 
-const logout = () => (dispatch) => dispatch({ type: 'LOGOUT', payload: {} })
+const logout = () => (dispatch) => dispatch({ type: LOGOUT, payload: {} })
 
-export { loginSubmit, logout }
+export {
+  loginSubmit,
+  logout,
+  LOGIN_FAIL,
+  LOGIN_PASS,
+  LOGOUT
+}
 
 /* eslint-enable no-unused-vars */
