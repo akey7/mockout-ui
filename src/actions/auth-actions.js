@@ -1,7 +1,3 @@
-/* eslint-disable no-unused-vars */
-
-import { listTodos } from './todo-actions'
-
 const LOGIN_FAIL = 'LOGIN_FAIL'
 const LOGOUT = 'LOGOUT'
 const LOGIN_PASS = 'LOGIN_PASS'
@@ -44,5 +40,3 @@ export {
   LOGIN_PASS,
   LOGOUT
 }
-
-/* eslint-enable no-unused-vars */
