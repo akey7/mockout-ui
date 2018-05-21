@@ -24,10 +24,11 @@ const loginSubmit = ({ username, password }) => {
         if (error) {
           dispatch({ type: LOGIN_FAIL, payload: { error } })
         }
-        else {
-          const payload = { username: username, token: result.token }
-          dispatch({ type: LOGIN_PASS, payload })
-        }
+        return token
+      })
+      .then((token) => {
+        const payload = { username, token }
+        dispatch({ type: LOGIN_PASS, payload })
       })
   }
 }
