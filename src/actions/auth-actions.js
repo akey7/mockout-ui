@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 
+import { listTodos } from './todo-actions'
+
 const LOGIN_FAIL = 'LOGIN_FAIL'
 const LOGOUT = 'LOGOUT'
 const LOGIN_PASS = 'LOGIN_PASS'
@@ -24,6 +26,10 @@ const loginSubmit = ({ username, password }) => {
         if (error) {
           dispatch({ type: LOGIN_FAIL, payload: { error } })
         }
+        return token
+      })
+      .then((token) => {
+        listTodos({ token })
         return token
       })
       .then((token) => {
