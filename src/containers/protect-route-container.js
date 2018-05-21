@@ -7,7 +7,7 @@ import LoginFormContainer from './login-form-container'
 // shadowing Component because I didn't destructure it in an import.
 const ProtectRoute = ({ component: Component, token, isLoggedIn, ...rest }) => {
   if (token) {
-    return <Route render={ (props) => <Component {...props} /> } />
+    return <Route render={ (props) => <Component token={ token } {...props} /> } />
   }
   else {
     return <LoginFormContainer />
