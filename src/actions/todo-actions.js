@@ -16,7 +16,7 @@ const listTodos = ({ token }) => {
     fetch(url, opts)
       .then((result) => result.json())
       .then((result) => {
-        console.log(result)
+        dispatch({ type: TODOS_LISTED, payload: result })
       })
   }
 }
