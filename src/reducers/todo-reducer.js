@@ -6,7 +6,7 @@ function TodoReducer(state = null, action) {
   }
 
   if (state) {
-    switch (action) {
+    switch (action.type) {
     case TODOS_LISTED:
       debugger
       return { ...state, todos: action.payload.todos }
