@@ -12,8 +12,6 @@ const listTodos = ({ token }) => {
     }
   }
 
-  debugger
-
   return (dispatch) => {
     fetch(url, opts)
       .then((result) => result.json())
