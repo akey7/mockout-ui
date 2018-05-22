@@ -11,6 +11,7 @@ function TodoReducer(state = null, action) {
       debugger
       return { ...state, todos: action.payload.todos }
     default:
+      debugger
       return state
     }
   }
