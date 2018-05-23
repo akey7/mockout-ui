@@ -4,8 +4,12 @@ import { deleteTodo } from '../actions/todo-actions'
 import { bindActionCreators } from 'redux'
 
 class Todo extends Component {
-  delTodo = (event) => {
-    event.preventDefault()
+  constructor(props) {
+    super(props)
+    this.delTodo = this.delTodo.bind(this)
+  }
+
+  delTodo() {
     this.props.deleteTodo({ id: this.props.id })
   }
 
@@ -20,6 +24,6 @@ class Todo extends Component {
   }
 }
 
-const mapStateToProps = (state) => state.todos
+const mapStateToProps = (state) => ({ todos: state.todos.todos, auth: state.auth })
 const mapDispatchToProps = (dispatch) => bindActionCreators({ deleteTodo }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Todo)
