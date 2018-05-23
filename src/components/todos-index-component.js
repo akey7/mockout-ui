@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { listTodos } from '../actions/todo-actions'
+import './todos-index-component.css'
 
 class TodosIndexComponent extends Component {
   componentDidMount() {
@@ -10,11 +11,13 @@ class TodosIndexComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className='todos-list'>
         <h1>
           Todos index
         </h1>
-        { this.props.todos.map((todo) => <p key={ todo.id }>{ todo.item }</p>) }
+        <ul>
+          { this.props.todos.map((todo) => <li key={ todo.id }>{ todo.item }</li>) }
+        </ul>
       </div>
     )
   }

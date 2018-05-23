@@ -8,10 +8,8 @@ function TodoReducer(state = null, action) {
   if (state) {
     switch (action.type) {
     case TODOS_LISTED:
-      debugger
       return { ...state, todos: action.payload.todos }
     default:
-      debugger
       return state
     }
   }
