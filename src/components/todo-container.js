@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 class Todo extends Component {
   render() {
     return (<div>
-      <button onClick={() => this.props.deleteTodo(this.props.id)}>DELETE</button>
+      <button onClick={() => this.props.deleteTodo({ id: this.props.id })}>DELETE</button>
       <span>{this.props.id}: {this.props.todos[this.props.id].item}</span>
     </div>)
   }

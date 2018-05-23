@@ -22,6 +22,6 @@ const listTodos = ({ token }) => {
   }
 }
 
-const deleteTodo = (id) => (dispatch) => dispatch({ type: TODO_DELETED, payload: id })
+const deleteTodo = ({ id }) => (dispatch) => dispatch({ type: TODO_DELETED, payload: id })
 
 export { listTodos, deleteTodo, TODOS_LISTED, TODO_DELETED }

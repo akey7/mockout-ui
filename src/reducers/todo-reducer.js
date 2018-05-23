@@ -17,7 +17,6 @@ function TodoReducer(state = null, action) {
     case TODO_DELETED:
       const newTodos = { ...state.todos }
       delete newTodos[action.payload]
-      debugger
       return { ...state, todos: newTodos }
     default:
       return state
