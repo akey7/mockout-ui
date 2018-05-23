@@ -10,7 +10,7 @@ class Todo extends Component {
   }
 
   delTodo() {
-    this.props.deleteTodo({ id: this.props.id })
+    this.props.deleteTodo({ id: this.props.id, token: this.props.auth.token })
   }
 
   render() {

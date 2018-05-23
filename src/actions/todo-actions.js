@@ -22,6 +22,21 @@ const listTodos = ({ token }) => {
   }
 }
 
-const deleteTodo = ({ id }) => (dispatch) => dispatch({ type: TODO_DELETED, payload: id })
+const deleteTodo = ({ id, token }) => {
+  const url = `${process.env.REACT_APP_API_URL}/todo/${id}`
+
+  const opts = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  return (dispatch) => {
+    fetch(url, opts).then(dispatch({ type: TODO_DELETED, payload: id }))
+  }
+}
 
 export { listTodos, deleteTodo, TODOS_LISTED, TODO_DELETED }
