@@ -4,9 +4,14 @@ import { deleteTodo } from '../actions/todo-actions'
 import { bindActionCreators } from 'redux'
 
 class Todo extends Component {
+  delTodo = (event) => {
+    event.preventDefault()
+    this.props.deleteTodo({ id: this.props.id })
+  }
+
   render() {
     return (<div>
-      <button onClick={() => this.props.deleteTodo({ id: this.props.id })}>DELETE</button>
+      <button onClick={ this.delTodo }>DELETE</button>
       <span>{this.props.id}: {this.props.todos[this.props.id].item}</span>
     </div>)
   }
