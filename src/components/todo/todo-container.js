@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { deleteTodo, updateTodo } from '../actions/todo-actions'
+import { deleteTodo, updateTodo } from '../../actions/todo-actions'
 import { bindActionCreators } from 'redux'
 
 class Todo extends Component {

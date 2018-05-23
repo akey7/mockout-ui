@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { listTodos } from '../actions/todo-actions'
+import { listTodos } from '../../actions/todo-actions'
 import './todos-index-container.css'
 import Todo from './todo-container'
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './header-container.css'
-import { logout } from '../actions/auth-actions'
+import { logout } from '../../actions/auth-actions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 

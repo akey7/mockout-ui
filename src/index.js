@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux'
 import reducers from './reducers/root-reducer'
 import thunk from 'redux-thunk'
 
-import TodosIndex from './components/todos-index-container'
+import TodosIndex from './components/todo/todos-index-container'
 import Header from './components/header/header-container'
 import ProtectRoute from './components/protect-route-container'
 import './index.css'
