@@ -1,4 +1,4 @@
-import { TODOS_LISTED } from '../actions/todo-actions'
+import { TODOS_LISTED, TODO_DELETED } from '../actions/todo-actions'
 
 function TodoReducer(state = null, action) {
   const initialState = {
@@ -14,6 +14,11 @@ function TodoReducer(state = null, action) {
         return newObj
       }, {})
       return { ...state, todos }
+    case TODO_DELETED:
+      debugger
+      const newTodos = { ...state.todos }
+      delete newTodos[action.payload]
+      return { ...state, todos: newTodos }
     default:
       return state
     }

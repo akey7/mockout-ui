@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { deleteTodo } from '../actions/todo-actions'
+import { bindActionCreators } from 'redux'
 
-const Todo = ({ id, todos }) => (
-  <div>
-    <button>DELETE</button>
-    <span>{id}: {todos[id].item}</span>
-  </div>
-)
-
-// const mapStateToProps = (state) => state.todos
-// const mapDispatchToProps = (dispatch) => bindActionCreators({ listTodos }, dispatch)
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(TodosIndex)
+class Todo extends Component {
+  render() {
+    return (<div>
+      <button onClick={() => this.props.deleteTodo(this.props.id)}>DELETE</button>
+      <span>{this.props.id}: {this.props.todos[this.props.id].item}</span>
+    </div>)
+  }
+}
 
 const mapStateToProps = (state) => state.todos
-export default connect(mapStateToProps)(Todo)
+const mapDispatchToProps = (dispatch) => bindActionCreators({ deleteTodo }, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(Todo)

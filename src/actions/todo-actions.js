@@ -1,4 +1,5 @@
 const TODOS_LISTED = 'TODOS_LISTED'
+const TODO_DELETED = 'TODO_DELETED'
 
 const listTodos = ({ token }) => {
   const url = `${process.env.REACT_APP_API_URL}/todo`
@@ -21,4 +22,6 @@ const listTodos = ({ token }) => {
   }
 }
 
-export { listTodos, TODOS_LISTED }
+const deleteTodo = ({ id }) => (dispatch) => dispatch({ type: TODO_DELETED, payload: id })
+
+export { listTodos, deleteTodo, TODOS_LISTED, TODO_DELETED }
