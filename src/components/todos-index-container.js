@@ -7,7 +7,7 @@ import Todo from './todo-container'
 
 class TodosIndex extends Component {
   componentDidMount() {
-    this.props.listTodos({ token: this.props.token })
+    this.props.listTodos({ token: this.props.auth.token })
   }
 
   render() {
@@ -23,7 +23,7 @@ class TodosIndex extends Component {
   }
 }
 
-const mapStateToProps = (state) => state.todos
+const mapStateToProps = (state) => ({ todos: state.todos.todos, auth: state.auth })
 const mapDispatchToProps = (dispatch) => bindActionCreators({ listTodos }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodosIndex)
