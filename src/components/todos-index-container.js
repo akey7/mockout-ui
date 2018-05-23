@@ -17,7 +17,7 @@ class TodosIndex extends Component {
         <h1>
           Todos index
         </h1>
-        { todoKeys.map((id) => <p key={id}>{id}: {this.props.todos[id].item}</p> ) }
+        { todoKeys.map((id) => <Todo key={id} id={id} /> ) }
       </div>
     )
   }
