@@ -1,10 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const Todo = ({ id, todos }) => {
-  debugger
-  return <p>{ id }: { todos[id].item }</p>
-}
+const Todo = ({ id, todos }) => (
+  <div>
+    <button>DELETE</button>
+    <span>{id}: {todos[id].item}</span>
+  </div>
+)
 
 // const mapStateToProps = (state) => state.todos
 // const mapDispatchToProps = (dispatch) => bindActionCreators({ listTodos }, dispatch)
