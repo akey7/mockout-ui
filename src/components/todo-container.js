@@ -10,9 +10,12 @@ class Todo extends Component {
   }
 
   render() {
+    const { id, todos } = this.props
+    const item = todos[id].item
+
     return (<div>
       <button onClick={ this.delTodo }>DELETE</button>
-      <span>{this.props.id}: {this.props.todos[this.props.id].item}</span>
+      <span>{id}: {item}</span>
     </div>)
   }
 }
