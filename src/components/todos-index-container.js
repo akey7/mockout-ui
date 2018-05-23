@@ -3,6 +3,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { listTodos } from '../actions/todo-actions'
 import './todos-index-container.css'
+import Todo from './todo-container'
+
+/*
+ <ul>
+ { this.props.todos.map((todo) => <li key={ todo.id }>{ todo.item }</li>) }
+ </ul>
+ */
 
 class TodosIndex extends Component {
   componentDidMount() {
@@ -15,9 +22,7 @@ class TodosIndex extends Component {
         <h1>
           Todos index
         </h1>
-        <ul>
-          { this.props.todos.map((todo) => <li key={ todo.id }>{ todo.item }</li>) }
-        </ul>
+        { this.props.todos.map((todo) => <Todo key={ todo.id } id={ todo.id }/>) }
       </div>
     )
   }
