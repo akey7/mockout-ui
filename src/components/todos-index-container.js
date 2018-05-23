@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { listTodos } from '../actions/todo-actions'
 import './todos-index-container.css'
 
-class TodosIndexComponent extends Component {
+class TodosIndex extends Component {
   componentDidMount() {
     this.props.listTodos({ token: this.props.token })
   }
@@ -26,4 +26,4 @@ class TodosIndexComponent extends Component {
 const mapStateToProps = (state) => state.todos
 const mapDispatchToProps = (dispatch) => bindActionCreators({ listTodos }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodosIndexComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(TodosIndex)
