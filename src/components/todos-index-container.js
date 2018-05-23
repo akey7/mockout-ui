@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { listTodos } from '../actions/todo-actions'
-import './todos-index-component.css'
+import './todos-index-container.css'
 
 class TodosIndexComponent extends Component {
   componentDidMount() {
