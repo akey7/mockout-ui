@@ -24,6 +24,6 @@ class Todo extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ todos: state.todos.todos, auth: state.auth })
+const mapStateToProps = (state) => ({ todos: state.todos, auth: state.auth })
 const mapDispatchToProps = (dispatch) => bindActionCreators({ deleteTodo }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Todo)

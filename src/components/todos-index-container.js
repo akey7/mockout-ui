@@ -23,7 +23,7 @@ class TodosIndex extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ todos: state.todos.todos, auth: state.auth })
+const mapStateToProps = (state) => ({ todos: state.todos, auth: state.auth })
 const mapDispatchToProps = (dispatch) => bindActionCreators({ listTodos }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodosIndex)

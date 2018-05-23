@@ -1,9 +1,7 @@
 import { TODOS_LISTED, TODO_DELETED } from '../actions/todo-actions'
 
 function TodoReducer(state = null, action) {
-  const initialState = {
-    todos: {}
-  }
+  const initialState = {}
 
   if (state) {
     switch (action.type) {
@@ -13,11 +11,11 @@ function TodoReducer(state = null, action) {
         newObj[x.id] = x
         return newObj
       }, {})
-      return { ...state, todos }
+      return todos
     case TODO_DELETED:
-      const newTodos = { ...state.todos }
+      const newTodos = { ...state }
       delete newTodos[action.payload]
-      return { ...state, todos: newTodos }
+      return newTodos
     default:
       return state
     }
