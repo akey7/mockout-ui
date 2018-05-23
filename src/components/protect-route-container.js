@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import LoginFormContainer from './login-form-container'
+import LoginFormContainer from './login-form/login-form-container'
 
 // NOTE: This is a function component so I don't need to worry about
 // shadowing Component because I didn't destructure it in an import.
