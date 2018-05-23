@@ -5,24 +5,19 @@ import { listTodos } from '../actions/todo-actions'
 import './todos-index-container.css'
 import Todo from './todo-container'
 
-/*
- <ul>
- { this.props.todos.map((todo) => <li key={ todo.id }>{ todo.item }</li>) }
- </ul>
- */
-
 class TodosIndex extends Component {
   componentDidMount() {
     this.props.listTodos({ token: this.props.token })
   }
 
   render() {
+    const todoKeys = Object.keys(this.props.todos).sort()
     return (
       <div className='todos-list'>
         <h1>
           Todos index
         </h1>
-        { this.props.todos.map((todo) => <Todo key={ todo.id } id={ todo.id }/>) }
+        { todoKeys.map((id) => <p key={id}>{id}: {this.props.todos[id].item}</p> ) }
       </div>
     )
   }

@@ -2,13 +2,18 @@ import { TODOS_LISTED } from '../actions/todo-actions'
 
 function TodoReducer(state = null, action) {
   const initialState = {
-    todos: []
+    todos: {}
   }
 
   if (state) {
     switch (action.type) {
     case TODOS_LISTED:
-      return { ...state, todos: action.payload.todos }
+      const todos = action.payload.todos.reduce((acc, x) => {
+        const newObj = { ...acc }
+        newObj[x.id] = x
+        return newObj
+      }, {})
+      return { ...state, todos }
     default:
       return state
     }
