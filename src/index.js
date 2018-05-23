@@ -9,8 +9,8 @@ import reducers from './reducers/root-reducer'
 import thunk from 'redux-thunk'
 
 import TodosIndex from './components/todos-index-container'
-import Header from './containers/header-container'
-import ProtectRoute from './containers/protect-route-container'
+import Header from './components/header-container'
+import ProtectRoute from './components/protect-route-container'
 import './index.css'
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
