@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { deleteTodo } from '../actions/todo-actions'
+import { deleteTodo, updateTodo } from '../actions/todo-actions'
 import { bindActionCreators } from 'redux'
 
 class Todo extends Component {
@@ -16,6 +16,7 @@ class Todo extends Component {
     this.onSwitchToEdit = this.onSwitchToEdit.bind(this)
     this.onEditingChange = this.onEditingChange.bind(this)
     this.onCancelEditing = this.onCancelEditing.bind(this)
+    this.onEditingSubmit = this.onEditingSubmit.bind(this)
   }
 
   delTodo() {
@@ -45,6 +46,14 @@ class Todo extends Component {
     })
   }
 
+  onEditingSubmit(event) {
+    event.preventDefault()
+    this.props.updateTodo({
+      updatedId: this.props.id,
+      updatedItem: this.state.editingItem
+    })
+  }
+
   render() {
     const { id, todos } = this.props
     const item = todos[id].item
@@ -58,7 +67,7 @@ class Todo extends Component {
     )
 
     const editing = (
-      <form>
+      <form onSubmit={this.onEditingSubmit}>
         <input onChange={this.onEditingChange} value={this.state.editingItem} />
         <button onClick={this.onCancelEditing}>CANCEL</button>
         <input type='submit' />
@@ -72,5 +81,7 @@ class Todo extends Component {
 }
 
 const mapStateToProps = (state) => ({ todos: state.todos, auth: state.auth })
-const mapDispatchToProps = (dispatch) => bindActionCreators({ deleteTodo }, dispatch)
+const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({ deleteTodo, updateTodo }, dispatch)
+)
 export default connect(mapStateToProps, mapDispatchToProps)(Todo)

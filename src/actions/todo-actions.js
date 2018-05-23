@@ -1,5 +1,6 @@
 const TODOS_LISTED = 'TODOS_LISTED'
 const TODO_DELETED = 'TODO_DELETED'
+const TODO_UPDATED = 'TODO_UPDATED'
 
 const listTodos = ({ token }) => {
   const url = `${process.env.REACT_APP_API_URL}/todo`
@@ -39,4 +40,31 @@ const deleteTodo = ({ id, token }) => {
   }
 }
 
-export { listTodos, deleteTodo, TODOS_LISTED, TODO_DELETED }
+const updateTodo = ({ updatedItem, updatedId, token }) => {
+  const url = `${process.env.REACT_APP_API_URL}/todo/${updatedId}`
+
+  const opts = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({ item: updatedItem })
+  }
+
+  return (dispatch) => {
+    const payload = { updatedId, updatedItem }
+    fetch(url, opts)
+      .then(dispatch({ type: TODO_UPDATED, payload }))
+  }
+}
+
+export {
+  listTodos,
+  deleteTodo,
+  updateTodo,
+  TODOS_LISTED,
+  TODO_DELETED,
+  TODO_UPDATED
+}
