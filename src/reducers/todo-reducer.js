@@ -1,7 +1,6 @@
 import {
   TODOS_LISTED,
-  TODO_DELETED,
-  TODO_UPDATED
+  TODO_DELETED
 } from '../actions/todo-actions'
 
 function TodoReducer(state = null, action) {
@@ -20,11 +19,6 @@ function TodoReducer(state = null, action) {
       const newTodos = { ...state }
       delete newTodos[action.payload]
       return newTodos
-    case TODO_UPDATED:
-      const updatedTodos = { ...state }
-      const { updatedItem, updatedId } = action.payload
-      updatedTodos[updatedId] = updatedItem
-      return updatedTodos
     default:
       return state
     }

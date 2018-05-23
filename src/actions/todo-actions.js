@@ -1,6 +1,5 @@
 const TODOS_LISTED = 'TODOS_LISTED'
 const TODO_DELETED = 'TODO_DELETED'
-const TODO_UPDATED = 'TODO_UPDATED'
 
 const listTodos = ({ token }) => {
   const url = `${process.env.REACT_APP_API_URL}/todo`
@@ -68,6 +67,5 @@ export {
   deleteTodo,
   updateTodo,
   TODOS_LISTED,
-  TODO_DELETED,
-  TODO_UPDATED
+  TODO_DELETED
 }
