@@ -9,11 +9,12 @@ class Todo extends Component {
 
     this.state = {
       editing: false,
-      editingItem: this.props.item
+      editingItem: props.todos[props.id].item
     }
 
     this.delTodo = this.delTodo.bind(this)
     this.onSwitchToEdit = this.onSwitchToEdit.bind(this)
+    this.onEditingChange = this.onEditingChange.bind(this)
   }
 
   delTodo() {
@@ -24,6 +25,14 @@ class Todo extends Component {
     this.setState({
       ...this.state,
       editing: true
+    })
+  }
+
+  onEditingChange(event) {
+    event.preventDefault()
+    this.setState({
+      ...this.state,
+      editingItem: event.target.value
     })
   }
 
@@ -41,7 +50,7 @@ class Todo extends Component {
 
     const editing = (
       <form>
-        <input value={this.state.editingItem} />
+        <input onChange={this.onEditingChange} value={this.state.editingItem} />
         <button>CANCEL</button>
         <input type='submit' />
       </form>
