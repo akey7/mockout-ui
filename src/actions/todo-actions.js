@@ -53,8 +53,6 @@ const updateTodo = ({ updatedItem, updatedId, token }) => {
     body: JSON.stringify({ item: updatedItem })
   }
 
-  debugger
-
   return (dispatch) => {
     const payload = { updatedId, updatedItem }
     fetch(url, opts)

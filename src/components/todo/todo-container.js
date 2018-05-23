@@ -59,6 +59,14 @@ class Todo extends Component {
     })
   }
 
+  componentWillReceiveProps(nextProps) {
+    return {
+      ...this.state,
+      editing: false,
+      editingItem: nextProps.todos[nextProps.id].item
+    }
+  }
+
   render() {
     const { id, todos } = this.props
     const item = todos[id].item
