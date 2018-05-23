@@ -50,7 +50,8 @@ class Todo extends Component {
     event.preventDefault()
     this.props.updateTodo({
       updatedId: this.props.id,
-      updatedItem: this.state.editingItem
+      updatedItem: this.state.editingItem,
+      token: this.props.auth.token
     })
   }
 
