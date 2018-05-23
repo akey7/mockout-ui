@@ -8,7 +8,8 @@ class Todo extends Component {
     super(props)
 
     this.state = {
-      editing: false
+      editing: false,
+      editingItem: this.props.item
     }
 
     this.delTodo = this.delTodo.bind(this)
@@ -30,11 +31,24 @@ class Todo extends Component {
     const { id, todos } = this.props
     const item = todos[id].item
 
+    const display = (
+      <span>
+        <button onClick={this.onSwitchToEdit}>EDIT</button>
+        <button onClick={this.delTodo}>DELETE</button>
+        <span>{id}: {item}</span>
+      </span>
+    )
+
+    const editing = (
+      <form>
+        <input value={this.state.editingItem} />
+        <button>CANCEL</button>
+        <input type='submit' />
+      </form>
+    )
+
     return (<div>
-      {!this.state.editing
-        && <span><button onClick={this.onSwitchToEdit}>EDIT</button><button onClick={this.delTodo}>DELETE</button></span>
-      }
-      <span>{id}: {item}</span>
+      { this.state.editing ? editing : display }
     </div>)
   }
 }
