@@ -36,7 +36,7 @@ const deleteTodo = ({ id, token }) => {
   }
 
   return (dispatch) => {
-    fetch(url, opts).then(dispatch({ type: TODO_DELETED, payload: id }))
+    fetch(url, opts).then(() => dispatch({ type: TODO_DELETED, payload: id }))
   }
 }
 
@@ -53,10 +53,15 @@ const updateTodo = ({ updatedItem, updatedId, token }) => {
     body: JSON.stringify({ item: updatedItem })
   }
 
+  debugger
+
   return (dispatch) => {
     const payload = { updatedId, updatedItem }
     fetch(url, opts)
-      .then(dispatch({ type: TODO_UPDATED, payload }))
+      .then((result) => result.json())
+      .then((result) => {
+        dispatch({ type: TODOS_LISTED, payload: result })
+      })
   }
 }
 

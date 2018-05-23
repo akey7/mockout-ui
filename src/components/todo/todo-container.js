@@ -53,6 +53,10 @@ class Todo extends Component {
       updatedItem: this.state.editingItem,
       token: this.props.auth.token
     })
+    this.setState({
+      ...this.state,
+      editing: false
+    })
   }
 
   render() {
