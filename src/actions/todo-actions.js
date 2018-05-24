@@ -56,7 +56,6 @@ const updateTodo = ({ updatedItem, updatedId, token }) => {
   }
 
   return (dispatch) => {
-    const payload = { updatedId, updatedItem }
     fetch(url, opts)
       .then((result) => result.json())
       .then((result) => {
