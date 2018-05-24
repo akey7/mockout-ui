@@ -64,9 +64,32 @@ const updateTodo = ({ updatedItem, updatedId, token }) => {
   }
 }
 
+const createTodo = ({ item, token }) => {
+  const url = `${process.env.REACT_APP_API_URL}/todo`
+
+  const opts = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({ item })
+  }
+
+  return (dispatch) => {
+    fetch(url, opts)
+      .then((result) => result.json())
+      .then((result) => {
+        dispatch({ type: TODOS_LISTED, payload: result })
+      })
+  }
+}
+
 export {
   listTodos,
   deleteTodo,
   updateTodo,
+  createTodo,
   TODOS_LISTED
 }

@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { createTodo } from '../../actions/todo-actions'
 
 class TodoCreate extends Component {
   constructor(props) {
@@ -17,9 +20,18 @@ class TodoCreate extends Component {
     })
   }
 
+  onItemSubmit = (event) => {
+    event.preventDefault()
+    this.props.createTodo({ token: this.props.auth.token, item: this.state.item })
+    this.setState({
+      ...this.state,
+      item: ''
+    })
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.onItemSubmit}>
         <label>Create item: </label>
         <input onChange={this.onItemChange} value={this.state.item} />
         <input type='submit' />
@@ -29,4 +41,6 @@ class TodoCreate extends Component {
 }
 
 
-export default TodoCreate
+const mapStateToProps = (state) => ({ todos: state.todos, auth: state.auth })
+const mapDispatchToProps = (dispatch) => bindActionCreators({ createTodo }, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoCreate)
