@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { listTodos } from '../../actions/todo-actions'
 import './todos-index-container.css'
 import Todo from './todo-container'
+import TodoCreate from './todo-create-container'
 
 class TodosIndex extends Component {
   componentDidMount() {
@@ -14,9 +15,9 @@ class TodosIndex extends Component {
     const todoKeys = Object.keys(this.props.todos).sort()
     return (
       <div className='todos-list'>
-        <h1>
-          Todos index
-        </h1>
+        <h1>Todos</h1>
+        <p>...don't knock out your todo list, mock it out!</p>
+        <TodoCreate />
         { todoKeys.map((id) => <Todo key={id} id={id} /> ) }
       </div>
     )

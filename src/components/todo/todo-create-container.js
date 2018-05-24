@@ -12,7 +12,7 @@ class TodoCreate extends Component {
   render() {
     return (
       <form>
-        <label>Item</label>
+        <label>Create item: </label>
         <input value={this.state.item} />
         <input type='submit' />
       </form>
