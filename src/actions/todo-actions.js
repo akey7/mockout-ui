@@ -35,7 +35,11 @@ const deleteTodo = ({ id, token }) => {
   }
 
   return (dispatch) => {
-    fetch(url, opts).then(() => dispatch({ type: TODO_DELETED, payload: id }))
+    fetch(url, opts)
+      .then((result) => result.json())
+      .then((result) => {
+        dispatch({ type: TODOS_LISTED, payload: result })
+      })
   }
 }
 
